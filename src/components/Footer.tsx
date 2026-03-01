@@ -12,9 +12,10 @@ export default function Footer() {
               </div>
               <span className="font-bold">Les Chauffeurs d'Arras</span>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Le meilleur chauffeur au meilleur prix. Service VTC moderne et accessible à Arras.
-            </p>
+            <p className="text-sm text-muted-foreground">Le meilleur chauffeur au meilleur prix. 
+
+
+Service VTC moderne et accessible à Arras.</p>
             <span className="stealth-seo">Taxi Arras VTC transport Arras gare aéroport</span>
           </div>
           <div>
@@ -38,6 +39,5 @@ export default function Footer() {
           © {new Date().getFullYear()} Les Chauffeurs d'Arras. Tous droits réservés.
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
 }

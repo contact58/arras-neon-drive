@@ -36,9 +36,9 @@ const Index = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-muted-foreground text-lg md:text-xl mb-8 max-w-lg mx-auto">
+              className="text-muted-foreground text-lg md:text-xl mb-8 max-w-lg mx-auto">Taxi moderne et accessible à Arras. Gare, aéroport, trajets urbains.
 
-              VTC moderne et accessible à Arras. Gare, aéroport, trajets urbains.
+
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
