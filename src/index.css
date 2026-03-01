@@ -15,7 +15,7 @@
     --popover: 0 0% 5%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 210 100% 60%;
+    --primary: 200 100% 70%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 10%;
@@ -32,22 +32,23 @@
 
     --border: 0 0% 13%;
     --input: 0 0% 13%;
-    --ring: 210 100% 60%;
+    --ring: 200 100% 70%;
 
     --radius: 1.5rem;
 
-    --neon-green: 210 100% 60%;
-    --neon-cyan: 195 100% 60%;
-    --neon-magenta: 310 100% 65%;
+    --neon-green: 200 100% 70%;
+    --neon-cyan: 180 100% 75%;
+    --neon-magenta: 230 100% 75%;
+    --primary-glow: 220 100% 80%;
 
     --sidebar-background: 0 0% 3%;
     --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 210 100% 60%;
+    --sidebar-primary: 200 100% 70%;
     --sidebar-primary-foreground: 0 0% 0%;
     --sidebar-accent: 0 0% 10%;
     --sidebar-accent-foreground: 0 0% 95%;
     --sidebar-border: 0 0% 13%;
-    --sidebar-ring: 210 100% 60%;
+    --sidebar-ring: 200 100% 70%;
   }
 }
 
@@ -103,10 +104,18 @@
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--neon-cyan)));
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--neon-cyan)), hsl(var(--primary-glow)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--neon-cyan)));
+  }
+
+  .gradient-border {
+    border-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--neon-cyan))) 1;
   }
 }
 
