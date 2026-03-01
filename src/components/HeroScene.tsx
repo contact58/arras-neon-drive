@@ -5,7 +5,7 @@ import * as THREE from "three";
 
 function Road() {
   const roadRef = useRef<THREE.Mesh>(null);
-  
+
   useFrame((_, delta) => {
     if (roadRef.current) {
       roadRef.current.position.z += delta * 8;
@@ -23,16 +23,16 @@ function Road() {
         <meshStandardMaterial color="#111111" />
       </mesh>
       {/* Road lines */}
-      {Array.from({ length: 15 }).map((_, i) => (
-        <RoadLine key={i} initialZ={-30 + i * 4} />
-      ))}
-    </group>
-  );
+      {Array.from({ length: 15 }).map((_, i) =>
+      <RoadLine key={i} initialZ={-30 + i * 4} />
+      )}
+    </group>);
+
 }
 
-function RoadLine({ initialZ }: { initialZ: number }) {
+function RoadLine({ initialZ }: {initialZ: number;}) {
   const ref = useRef<THREE.Mesh>(null);
-  
+
   useFrame((_, delta) => {
     if (ref.current) {
       ref.current.position.z += delta * 8;
@@ -46,11 +46,11 @@ function RoadLine({ initialZ }: { initialZ: number }) {
     <mesh ref={ref} rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.98, initialZ]}>
       <planeGeometry args={[0.15, 1.5]} />
       <meshStandardMaterial color="#00ff88" emissive="#00ff88" emissiveIntensity={0.3} />
-    </mesh>
-  );
+    </mesh>);
+
 }
 
-function NeonSign({ position, text, color }: { position: [number, number, number]; text: string; color: string }) {
+function NeonSign({ position, text, color }: {position: [number, number, number];text: string;color: string;}) {
   const ref = useRef<THREE.Group>(null);
   const initialZ = position[2];
 
@@ -69,22 +69,22 @@ function NeonSign({ position, text, color }: { position: [number, number, number
         {/* Sign board */}
         <mesh>
           <boxGeometry args={[2.5, 0.8, 0.05]} />
-          <meshStandardMaterial 
-            color="#111" 
-            emissive={color} 
-            emissiveIntensity={0.1} 
-          />
+          <meshStandardMaterial
+            color="#111"
+            emissive={color}
+            emissiveIntensity={0.1} />
+
         </mesh>
         {/* Sign border glow */}
         <mesh>
           <boxGeometry args={[2.6, 0.9, 0.02]} />
-          <meshStandardMaterial 
-            color={color} 
-            emissive={color} 
+          <meshStandardMaterial
+            color={color}
+            emissive={color}
             emissiveIntensity={0.5}
             transparent
-            opacity={0.3}
-          />
+            opacity={0.3} />
+
         </mesh>
         {/* Post */}
         <mesh position={[0, -1.5, 0]}>
@@ -92,8 +92,8 @@ function NeonSign({ position, text, color }: { position: [number, number, number
           <meshStandardMaterial color="#333" />
         </mesh>
       </Float>
-    </group>
-  );
+    </group>);
+
 }
 
 function CarBody() {
@@ -149,8 +149,8 @@ function CarBody() {
       </mesh>
       {/* Underglow */}
       <pointLight position={[0, 0, 0]} color="#00ff88" intensity={1} distance={4} />
-    </group>
-  );
+    </group>);
+
 }
 
 function Scene() {
@@ -164,8 +164,8 @@ function Scene() {
       <NeonSign position={[4, 1.5, -22]} text="VTC" color="#00aaff" />
       <NeonSign position={[-3.5, 0.8, -30]} text="TAXI" color="#ff00aa" />
       <NeonSign position={[3, 1.2, -38]} text="GO" color="#00ff88" />
-    </>
-  );
+    </>);
+
 }
 
 export default function HeroScene() {
@@ -174,11 +174,11 @@ export default function HeroScene() {
       <Canvas
         camera={{ position: [0, 2, 8], fov: 60 }}
         gl={{ antialias: true }}
-        style={{ background: "black" }}
-      >
+        style={{ background: "black" }} className="text-neon-cyan">
+
         <Scene />
       </Canvas>
       <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />
-    </div>
-  );
+    </div>);
+
 }
