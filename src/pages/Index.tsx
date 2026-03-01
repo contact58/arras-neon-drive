@@ -28,7 +28,7 @@ const Index = () => {
               transition={{ duration: 0.8 }}
               className="text-4xl md:text-7xl font-black mb-4 leading-tight">
 
-              <span className="gradient-text text-primary-foreground bg-primary-foreground">Le meilleur chauffeur,</span>
+              <span className="gradient-text text-neon-cyan">Le meilleur chauffeur,</span>
               <br />
               <span className="text-foreground">au meilleur prix.</span>
             </motion.h1>
